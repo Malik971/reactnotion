@@ -1,9 +1,12 @@
 type MessageProps = {
-  firstName: string;
-  lastName: string;
+  // Le ? indique que cette propriété est optionnelle
+  // seul le texte est obligatoire
+  // et les autres propriétés sont optionnelles
+  firstName?: string;
+  lastName?: string;
   email?: string; // Optional property
   phone?: string; // Optional property
-  address?: string; // Optional property
+  texte: string; // Required property
 };
 
 function Message(props : MessageProps) {
@@ -16,7 +19,7 @@ function Message(props : MessageProps) {
         Bonjour {props.firstName} {props.lastName}
         {props?.email && <span>{props.email}</span>} 
         {props.phone ? `, votre téléphone est ${props.phone}` : ''}
-        {props.address ? `, votre adresse est ${props.address}` : ''}
+        {props.texte ? `, votre texte est ici:  ${props.texte}` : ''}
       </p>
     </div>
   );
