@@ -17,11 +17,14 @@ type Props = {
 function Users(props: Props) {
   const users = props.users;
   return (
-    <section>
+    <section className="grid"> 
       {users.map((user: UsersProps) => (
         <article>
-          <h3>
+          <h3  className="users">
             {user.firstName} {user.surname}
+            <p>${user.email}</p>
+            <p>${user.phone}</p>
+            <p>${user.about}</p>
           </h3>
         </article>
       ))}

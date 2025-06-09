@@ -1,11 +1,13 @@
+import Users from "./components/Users";
 import Messages from "./pages/Messages";
-import { MESSAGE } from "./utils/data";
+import { MESSAGE, USERS } from "./utils/data";
 
 
 function App() {
   return (
     <>
       <Messages messages={MESSAGE} />
+      <Users users={USERS} />
     </>
   );
 }
