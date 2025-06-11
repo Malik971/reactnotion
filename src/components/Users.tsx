@@ -17,7 +17,7 @@ type Props = {
 function Users(props: Props) {
   const users = props.users;
   return (
-    <section className="grid"> 
+    <section className="container mx-auto"> 
       {users.map((user: UsersProps) => (
         <article>
           <h3  className="users">
