@@ -1,3 +1,4 @@
+/* @tailwind directives removed. Make sure Tailwind is set up if you want to use them. */
 @import "tailwindcss";
 
 .message {
@@ -8,6 +9,7 @@
 
 .users {
   border: 2px solid #ccc;
+  border-radius: 10px;
   background-color: antiquewhite;
   padding: 10px;
 }

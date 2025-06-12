@@ -17,14 +17,14 @@ type Props = {
 function Users(props: Props) {
   const users = props.users;
   return (
-    <section className="container mx-auto"> 
+    <section className="grid"> 
       {users.map((user: UsersProps) => (
-        <article>
-          <h3  className="users">
+        <article key={user.guid}>
+          <h3  className="bg-red-600 border border-yellow-400 rounded-lg p-4 shadow-md">
             {user.firstName} {user.surname}
-            <p>${user.email}</p>
-            <p>${user.phone}</p>
-            <p>${user.about}</p>
+            <p>{user.email}</p>
+            <p>{user.phone}</p>
+            <p>{user.about}</p>
           </h3>
         </article>
       ))}

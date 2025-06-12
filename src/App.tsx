@@ -1,13 +1,15 @@
 import Users from "./components/Users";
-import Messages from "./pages/Messages";
-import { MESSAGE, USERS } from "./utils/data";
-
+// import Messages from "./pages/Messages";
+import { USERS } from "./utils/data";
 
 function App() {
   return (
     <>
-      <Messages messages={MESSAGE} />
-      <Users users={USERS} />
+      <section className="text-3xl font-bold underline">
+        <div className="bg-red-600 text-white p-4">Test Background</div>
+        {/* <Messages messages={MESSAGE} /> */}
+        <Users users={USERS} />
+      </section>
     </>
   );
 }
