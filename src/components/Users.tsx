@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 type UsersProps = {
   id: string;
   guid: string;
@@ -16,17 +18,23 @@ type Props = {
 };
 
 function Users({ users }: Props) {
-  let sortedUsers: UsersProps[] = users;
-  const sortBy = (field: string) => {
-    // Sorting logic can be implemented here if needed
-    console.log(`Sorting by ${field}`);
-    sortedUsers = sortedUsers.sort((first: UsersProps, second: UsersProps) => {
+  const [sortedUsers, setSortedUsers] = useState(users);
+  const sortBy = (field: string, valeur: string) => {
+    const result = sortedUsers.sort((first: UsersProps, second: UsersProps) => {
       const firstValue = first[field as keyof UsersProps] || "";
       const secondValue = second[field as keyof UsersProps] || "";
-      if (firstValue < secondValue) return -1;
-      if (firstValue > secondValue) return 1;
-      return 0;
+      
+      let order = 1;
+      if (valeur === "femele") {
+        order = -1;
+      }
+
+      let sortResult = 0;
+      if (firstValue > secondValue) sortResult = 1;
+      if (firstValue < secondValue) sortResult = -1;
+      return sortResult * order;
     });
+    setSortedUsers([...result]);
   };
     return (
       <section>
@@ -35,20 +43,20 @@ function Users({ users }: Props) {
           <button
             type="button"
             className="border border-gray-100 bg-gray-50 rounded-md px-2 py-1 text-xs"
-            onClick={() => sortBy("femele")}
+            onClick={() => sortBy("gender", "femele")}
           >
             Femmes
           </button>
           <button
             type="button"
             className="border border-gray-100 bg-gray-50 rounded-md px-2 py-1 text-xs"
-            onClick={() => sortBy("male")}
+            onClick={() => sortBy("gender", "male")}
           >
             Hommes
           </button>
         </div>
         <div className="grid md:grid-cols-2 gap-4">
-          {users.map(
+          {sortedUsers.map(
             ({
               id,
               firstName,
