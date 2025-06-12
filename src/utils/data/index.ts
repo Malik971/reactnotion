@@ -7,7 +7,7 @@ const USERS = [
     "surname": "Powell",
     "gender": "male",
     "company": "VERTON",
-    "email": "nielsenpowell@verton.com",
+    // "email": "nielsenpowell@verton.com",
     "phone": "+1 (840) 483-3688",
     "address": "845 Varick Street, Wawona, Wisconsin, 8717",
     "about": "minim sint tempor dolor consequat mollit ex nulla excepteur duis"
@@ -46,7 +46,7 @@ const USERS = [
     "surname": "Paul",
     "gender": "male",
     "company": "ZIORE",
-    "email": "housepaul@ziore.com",
+    // "email": "housepaul@ziore.com",
     "phone": "+1 (901) 445-3407",
     "address": "784 Hampton Avenue, Forbestown, Kentucky, 5454",
     "about": "reprehenderit ex commodo ad dolore nisi in voluptate reprehenderit ullamco"

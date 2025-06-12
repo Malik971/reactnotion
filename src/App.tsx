@@ -5,7 +5,7 @@ import { USERS } from "./utils/data";
 function App() {
   return (
     <>
-      <section className="text-3xl font-bold underline">
+      <section className="text-3xl font-bold">
         <Users users={USERS} />
       </section>
     </>
