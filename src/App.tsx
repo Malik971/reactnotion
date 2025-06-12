@@ -6,7 +6,7 @@ function App() {
   return (
     <>
       <section className="text-3xl font-bold">
-        <Users users={USERS} />
+        Gestion des utilisateurs
       </section>
     </>
   );
