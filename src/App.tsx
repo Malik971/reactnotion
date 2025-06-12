@@ -1,4 +1,4 @@
-import Users from "./components/Users";
+import Users from "./pages/Users";
 // import Messages from "./pages/Messages";
 import { USERS } from "./utils/data";
 
