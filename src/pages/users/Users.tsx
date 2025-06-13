@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { USERS } from "../../utils/data";
+import { Link } from "react-router-dom";
 
 type UsersProps = {
   id: string;
@@ -108,7 +109,7 @@ function Users() {
             about,
             gender,
           }: UsersProps) => (
-            <article
+            <Link to={`me/users/${id}`}
               className="bg-white border border-gray-300 text-sm rounded-lg p-4 shadow-md"
               key={id}
             >
@@ -118,7 +119,7 @@ function Users() {
               <p>{email}</p>
               <p>{phone}</p>
               <p>{about}</p>
-            </article>
+            </Link >
           )
         )}
       </div>
