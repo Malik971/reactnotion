@@ -1,5 +1,5 @@
 import { createBrowserRouter, Outlet } from "react-router-dom";
-import Users from "../pages/Users";
+import Users from "../pages/users/Users";
 import App from "../App";
 import Dashboard from "../pages/dashboard/Dashboard";
 
@@ -12,7 +12,7 @@ const routes = createBrowserRouter([
         element: <App />,
       },
       {
-        path: "",
+        path: "me",
         element: <Dashboard />,
         children: [
           {
