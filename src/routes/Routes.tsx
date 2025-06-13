@@ -4,13 +4,14 @@ import App from "../App";
 import Dashboard from "../pages/dashboard/Dashboard";
 import Demandes from "../pages/demandes/Demandes";
 import UsersDetail from "../pages/usersDetail/UsersDetail";
+import DemandesDetail from "../pages/demandesDetail/DemandesDetail";
 
 const routes = createBrowserRouter([
   {
     path: "/",
     children: [
       {
-        path: "",
+        index: true,
         element: <App />,
       },
       {
@@ -28,6 +29,10 @@ const routes = createBrowserRouter([
           {
             path: "demandes",
             element: <Demandes />,
+          },
+          {
+            path: "demandes/:demandeId",
+            element: <DemandesDetail />,
           },
         ],
       },

@@ -61,11 +61,11 @@ function Users() {
       .catch(error => console.error('Error fetching users:', error));
   }
 
-  const getUsersWithAsyncAwait = async () => {
-    const reponse = await fetch('https://jsonplaceholder.typicode.com/users')
-    const users = await reponse.json();
-    setSortedUsers(users);
-  }
+  // const getUsersWithAsyncAwait = async () => {
+  //   const reponse = await fetch('https://jsonplaceholder.typicode.com/users')
+  //   const users = await reponse.json();
+  //   setSortedUsers(users);
+  // }
 
   useEffect(() => {
     getUsersWithoutAsyncAwait();
@@ -109,7 +109,7 @@ function Users() {
             about,
             gender,
           }: UsersProps) => (
-            <Link to={`me/users/${id}`}
+            <Link to={`${id}`}
               className="bg-white border border-gray-300 text-sm rounded-lg p-4 shadow-md"
               key={id}
             >
