@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { USERS } from "../../utils/data";
 
 type UsersProps = {
@@ -52,6 +52,25 @@ function Users() {
     });
     setSortedUsers([...result]);
   };
+
+  const getUsersWithoutAsyncAwait = () => {
+    fetch('https://jsonplaceholder.typicode.com/users')
+      .then(response => response.json())
+      .then(users => setSortedUsers(users))
+      .catch(error => console.error('Error fetching users:', error));
+  }
+
+  const getUsersWithAsyncAwait = async () => {
+    const reponse = await fetch('https://jsonplaceholder.typicode.com/users')
+    const users = await reponse.json();
+    setSortedUsers(users);
+  }
+
+  useEffect(() => {
+    getUsersWithoutAsyncAwait();
+  }
+  , []);
+    
   return (
     <section>
       <div className="flex bg-gray-200 justify-end items-center p-4 my-2 text-sm rounded-lg shadow-md gap-2">
