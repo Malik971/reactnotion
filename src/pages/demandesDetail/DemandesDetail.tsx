@@ -25,9 +25,9 @@ function DemandesDetail() {
     <article>
       <div className="flex">
         <div className="">
-           <h3 className="text-lg">
-                {user?.body} {user?.title}
-              </h3>
+          <h3 className="text-lg">
+            {user?.body} {user?.title}
+          </h3>
         </div>
       </div>
     </article>

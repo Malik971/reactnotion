@@ -15,10 +15,6 @@ type UsersProps = {
   gender: string;
 };
 
-type Props = {
-  users: UsersProps[];
-};
-
 function Users() {
   const [sortedUsers, setSortedUsers] = useState<UsersProps[]>(USERS);
   const [reverseOrdre, setReverseOrdre] = useState(1);
@@ -55,11 +51,11 @@ function Users() {
   };
 
   const getUsersWithoutAsyncAwait = () => {
-    fetch('https://jsonplaceholder.typicode.com/users')
-      .then(response => response.json())
-      .then(users => setSortedUsers(users))
-      .catch(error => console.error('Error fetching users:', error));
-  }
+    fetch("https://jsonplaceholder.typicode.com/users")
+      .then((response) => response.json())
+      .then((users) => setSortedUsers(users))
+      .catch((error) => console.error("Error fetching users:", error));
+  };
 
   // const getUsersWithAsyncAwait = async () => {
   //   const reponse = await fetch('https://jsonplaceholder.typicode.com/users')
@@ -69,9 +65,8 @@ function Users() {
 
   useEffect(() => {
     getUsersWithoutAsyncAwait();
-  }
-  , []);
-    
+  }, []);
+
   return (
     <section>
       <div className="flex bg-gray-200 justify-end items-center p-4 my-2 text-sm rounded-lg shadow-md gap-2">
@@ -109,7 +104,8 @@ function Users() {
             about,
             gender,
           }: UsersProps) => (
-            <Link to={`${id}`}
+            <Link
+              to={`${id}`}
               className="bg-white border border-gray-300 text-sm rounded-lg p-4 shadow-md"
               key={id}
             >
@@ -119,7 +115,7 @@ function Users() {
               <p>{email}</p>
               <p>{phone}</p>
               <p>{about}</p>
-            </Link >
+            </Link>
           )
         )}
       </div>

@@ -33,12 +33,12 @@ function UsersDetail() {
     <article>
       <div className="flex">
         <div className="">
-           <h3 className="text-lg">
-                {user?.gender} {user?.firstName} {user?.surname}
-              </h3>
-              <p>{user?.email}</p>
-              <p>{user?.phone}</p>
-              <p>{user?.about}</p>
+          <h3 className="text-lg">
+            {user?.gender} {user?.firstName} {user?.surname}
+          </h3>
+          <p>{user?.email}</p>
+          <p>{user?.phone}</p>
+          <p>{user?.about}</p>
         </div>
       </div>
     </article>
