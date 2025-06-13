@@ -5,7 +5,7 @@ type UsersProps = {
   id: string;
   guid: string;
   picture: string;
-  firstName: string;
+  name: string;
   surname: string;
   email?: string;
   phone: string;
@@ -30,18 +30,23 @@ function UsersDetail() {
     getOneUser();
   }, []);
   return (
-    <article>
-      <div className="flex">
-        <div className="">
-          <h3 className="text-lg">
-            {user?.gender} {user?.firstName} {user?.surname}
-          </h3>
-          <p>{user?.email}</p>
-          <p>{user?.phone}</p>
-          <p>{user?.about}</p>
-        </div>
-      </div>
-    </article>
+<article className="p-4 bg-white rounded-lg shadow">
+  <div className="flex gap-4 items-start">
+    <img
+      src={`https://i.pravatar.cc/150?u=${user?.id}`}
+      alt="Avatar"
+      className="rounded-full w-24 h-24"
+    />
+    <div className="flex flex-col gap-2">
+      <h3 className="text-lg font-semibold">
+        {user?.gender} {user?.name} {user?.surname}
+      </h3>
+      <p className="text-gray-600">{user?.email}</p>
+      <p className="text-gray-600">{user?.phone}</p>
+      <p className="text-gray-600">{user?.about}</p>
+    </div>
+  </div>
+</article>
   );
 }
 
